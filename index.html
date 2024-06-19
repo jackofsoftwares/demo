@@ -10,6 +10,7 @@
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
         .navbar-brand {
             font-size: 1.8em;
@@ -60,6 +61,10 @@
         .icon {
             font-size: 3em;
             color: #007bff;
+            transition: transform 0.3s;
+        }
+        .icon:hover {
+            transform: scale(1.1);
         }
         .footer {
             background-color: #343a40;
@@ -73,6 +78,25 @@
         }
         .footer a:hover {
             text-decoration: underline;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+        }
+        .back-to-top i {
+            font-size: 1.5em;
         }
     </style>
 </head>
@@ -151,8 +175,44 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Show the back-to-top button when scrolling down
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('#backToTopBtn').fadeIn();
+                } else {
+                    $('#backToTopBtn').fadeOut();
+                }
+            });
+
+            // Smooth scroll to top
+            $('#backToTopBtn').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            // Smooth scroll for navbar links
+            $('a.nav-link').click(function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
