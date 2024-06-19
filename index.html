@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional TV Mounting Service</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -17,22 +18,34 @@
         .header {
             background: url('banner.png') no-repeat center center;
             background-size: cover;
-            height: 500px;
+            height: 600px;
             color: white;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
         }
         .header h1 {
             font-size: 4em;
             font-weight: bold;
             margin: 0;
+            z-index: 1;
         }
         .header p {
             font-size: 1.8em;
             margin-top: 10px;
+            z-index: 1;
         }
         .content-section {
             padding: 60px 0;
@@ -44,10 +57,14 @@
         .content-section p {
             font-size: 1.2em;
         }
+        .icon {
+            font-size: 3em;
+            color: #007bff;
+        }
         .footer {
             background-color: #343a40;
             color: white;
-            padding: 20px 0;
+            padding: 40px 0;
             text-align: center;
         }
         .footer a {
@@ -97,24 +114,27 @@
     <div class="container content-section text-center">
         <div class="row">
             <div class="col-md-4">
-                <div class="card">
+                <div class="card shadow-sm">
                     <div class="card-body">
+                        <i class="fas fa-tools icon"></i>
                         <h3>High-Quality Service</h3>
                         <p>We provide top-notch TV mounting services with precision and care.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
+                <div class="card shadow-sm">
                     <div class="card-body">
+                        <i class="fas fa-user-tie icon"></i>
                         <h3>Expert Technicians</h3>
                         <p>Our technicians are experienced and highly skilled in TV mounting.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
+                <div class="card shadow-sm">
                     <div class="card-body">
+                        <i class="fas fa-smile icon"></i>
                         <h3>Customer Satisfaction</h3>
                         <p>Your satisfaction is our top priority. We ensure a hassle-free experience.</p>
                     </div>
