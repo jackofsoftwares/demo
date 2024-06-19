@@ -6,6 +6,7 @@
     <title>Professional TV Mounting Service</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -13,13 +14,13 @@
             scroll-behavior: smooth;
         }
         .navbar-brand {
-            font-size: 1.8em;
+            font-size: 1.5em;
             font-weight: bold;
         }
         .header {
             background: url('banner.png') no-repeat center center;
             background-size: cover;
-            height: 600px;
+            height: 50vh;
             color: white;
             text-align: center;
             display: flex;
@@ -27,6 +28,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            padding: 20px;
         }
         .header::before {
             content: '';
@@ -38,28 +40,28 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
         .header h1 {
-            font-size: 4em;
+            font-size: 2.5em;
             font-weight: bold;
             margin: 0;
             z-index: 1;
         }
         .header p {
-            font-size: 1.8em;
+            font-size: 1.2em;
             margin-top: 10px;
             z-index: 1;
         }
         .content-section {
-            padding: 60px 0;
+            padding: 40px 20px;
         }
         .content-section h3 {
-            font-size: 2em;
+            font-size: 1.5em;
             margin-bottom: 20px;
         }
         .content-section p {
-            font-size: 1.2em;
+            font-size: 1em;
         }
         .icon {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #007bff;
             transition: transform 0.3s;
         }
@@ -69,7 +71,7 @@
         .footer {
             background-color: #343a40;
             color: white;
-            padding: 40px 0;
+            padding: 20px 0;
             text-align: center;
         }
         .footer a {
@@ -97,6 +99,30 @@
         }
         .back-to-top i {
             font-size: 1.5em;
+        }
+        .animated-element {
+            opacity: 0;
+            visibility: hidden;
+        }
+        @media (min-width: 768px) {
+            .header {
+                height: 80vh;
+            }
+            .header h1 {
+                font-size: 4em;
+            }
+            .header p {
+                font-size: 1.8em;
+            }
+            .content-section h3 {
+                font-size: 2em;
+            }
+            .content-section p {
+                font-size: 1.2em;
+            }
+            .icon {
+                font-size: 3em;
+            }
         }
     </style>
 </head>
@@ -129,7 +155,7 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="header">
+    <header class="header animate__animated animate__fadeIn">
         <h1>Welcome to Professional TV Mounting Service</h1>
         <p>Your satisfaction is our priority</p>
     </header>
@@ -138,7 +164,7 @@
     <div class="container content-section text-center">
         <div class="row">
             <div class="col-md-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm animated-element">
                     <div class="card-body">
                         <i class="fas fa-tools icon"></i>
                         <h3>High-Quality Service</h3>
@@ -147,7 +173,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm animated-element">
                     <div class="card-body">
                         <i class="fas fa-user-tie icon"></i>
                         <h3>Expert Technicians</h3>
@@ -156,7 +182,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm animated-element">
                     <div class="card-body">
                         <i class="fas fa-smile icon"></i>
                         <h3>Customer Satisfaction</h3>
@@ -192,6 +218,15 @@
                 } else {
                     $('#backToTopBtn').fadeOut();
                 }
+
+                // Animate elements on scroll
+                $('.animated-element').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                        $(this).addClass('animate__animated animate__fadeInUp');
+                        $(this).css('opacity', '1');
+                        $(this).css('visibility', 'visible');
+                    }
+                });
             });
 
             // Smooth scroll to top
