@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
         }
         .navbar-brand {
-            font-size: 1.5em;
+            font-size: 1.8em;
+            font-weight: bold;
         }
         .header {
             background: url('banner.png') no-repeat center center;
             background-size: cover;
-            height: 400px;
+            height: 500px;
             color: white;
             text-align: center;
             display: flex;
@@ -24,15 +26,36 @@
             align-items: center;
         }
         .header h1 {
-            font-size: 3em;
+            font-size: 4em;
+            font-weight: bold;
+            margin: 0;
         }
         .header p {
-            font-size: 1.5em;
+            font-size: 1.8em;
+            margin-top: 10px;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .content-section h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            font-size: 1.2em;
         }
         .footer {
-            background-color: #f8f9fa;
+            background-color: #343a40;
+            color: white;
             padding: 20px 0;
             text-align: center;
+        }
+        .footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -71,19 +94,31 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container my-5">
+    <div class="container content-section text-center">
         <div class="row">
-            <div class="col-md-4 text-center">
-                <h3>High-Quality Service</h3>
-                <p>We provide top-notch TV mounting services with precision and care.</p>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>High-Quality Service</h3>
+                        <p>We provide top-notch TV mounting services with precision and care.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <h3>Expert Technicians</h3>
-                <p>Our technicians are experienced and highly skilled in TV mounting.</p>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Expert Technicians</h3>
+                        <p>Our technicians are experienced and highly skilled in TV mounting.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <h3>Customer Satisfaction</h3>
-                <p>Your satisfaction is our top priority. We ensure a hassle-free experience.</p>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Customer Satisfaction</h3>
+                        <p>Your satisfaction is our top priority. We ensure a hassle-free experience.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -92,6 +127,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Professional TV Mounting Service. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
 
